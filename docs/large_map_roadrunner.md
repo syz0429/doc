@@ -72,7 +72,7 @@ __1.__ 导出 `.fbx`文件:
 
   - 在主工具栏中选择,选择 `File` -> `Export` -> `Firebox (.fbx)`
 
-__2.__在弹出的窗口中:
+__2.__ 在弹出的窗口中:
 
 >- 检查以下选项:
     - _Split by Segmentation_: 通过语义分割对网格进行划分，改善行人导航。
@@ -93,7 +93,7 @@ __3.__ 导出 `.xodr`文件:
 
 ## 下一个步骤 <span id="next-steps"></span>
 
-现在可以将地图导入 Carla 了。有关详细信息，请参阅[导入大地图指南](arge_map_import.md)。
+现在可以将地图导入 Carla 了。有关详细信息，请参阅[导入大地图指南](large_map_import.md)。
 
 ---
 
