@@ -22,6 +22,11 @@ git push
 git lfs status  // 查看当前git lfs对象的状态
 
 git lfs ls-files  // 查看当前哪些文件是使用lfs管理的
+
+# 放弃工作区的更改
+git checkout -- .
+# 放弃暂存区的更改
+git reset HEAD
 ```
 
 

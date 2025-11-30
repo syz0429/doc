@@ -272,6 +272,8 @@ title: 主页
 
 [__链接 Epic 的汽车材质__](epic_automotive_materials.md) — 下载材质并将其链接到我们的车辆，以获得更逼真的车漆
 
+[__资产仓库__](tuto_G_lfs.md) - 管理资产大文件
+
 
 ### 虚幻引擎 <span id="unreal_engine"></span>
 
