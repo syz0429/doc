@@ -215,6 +215,7 @@ std::unordered_map<std::string, ForceInfo> forces;
 * 未识别的关节（包括自定义关节）被放置在正确的初始位置，但被替换为球形关节，从而导致不同的运动学。
 * 自定义关节的移动器坐标系 (FXM(q)) 设置为恒等变换，从而产生不同的初始姿态。
 
+
 ## 4. 将来可能的扩展
 
 目前，`ChParseSimBody` 仅解释和解析 osim 文件中有效属性的一个子集。这使得可以创建等效的 Chrono 模型，这些模型由刚体（带有可选的可视化资源和碰撞形状）、一组已识别的关节（即，在 Sim-body 中有直接对应的 Chrono 关节）和简单的执行器（`PointActuator` 和 `TorqueActuator`）组成。
@@ -235,8 +236,12 @@ std::unordered_map<std::string, ForceInfo> forces;
 我们建议将 Chrono 的建模和仿真功能扩展到生物力学系统，并将其封装在一个可选模块中（例如 Chrono:Biomechanics）。类似于专门用于灵活快速地对地面车辆系统进行建模的 Chrono::Vehicle 模块，未来的 Chrono::Biomechanics 模块可以提供生物力学系统的模板，用于表示具有固定已知拓扑结构的参数化多体系统模型。
 
 
+## 5. 示例
 
-### 5. ChParserOpenSim 文档
+[chrono\src\demos\parsers\demo_PARSER_OpenSim.cpp](https://github.com/OpenHUTB/chrono/blob/main/src/demos/parsers/demo_PARSER_OpenSim.cpp)
+
+
+## 6. ChParserOpenSim 文档
 
 这里列出 ChParserOpenSim 类中一些比较重要的函数。更多详情请参阅 [Project Chrono API 文档](http://api.chrono.projectchrono.org/index.html) 。
 
