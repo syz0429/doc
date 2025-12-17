@@ -36,7 +36,7 @@ title: 主页
 
      * 运行 [manual_control.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/manual_control.py) 生成一辆键盘控制的车，运行 `manual_control.py  --filter walker.pedestrian.*` 生成键盘控制的人
      * 运行 [generate_traffic.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/generate_traffic.py) 生成人车流
-     * 切换到 [VR 模式](interbehavior.md) ：[config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) --map Town10HD?GAME=VR ；切换到[无人机模式](https://openhutb.github.io/air_doc/) ：`config.py --map Town10HD?GAME=AIR`
+     * [切换](ue/switch_mode.md) 到 [VR 模式](interbehavior.md) ：[config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) --map Town10HD?GAME=VR ；切换到 [无人机模式](https://openhutb.github.io/air_doc/) ：`config.py --map Town10HD?GAME=AIR`
 
 
 
