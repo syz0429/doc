@@ -2,7 +2,11 @@
 
 Carla 可以连接到 NVIDIA Cosmos Transfer，以创建 Carla 中生成的合成数据的超逼真变体。
 
+![](./img/rendering/transfer_scene.jpg)
+
 在此集成中，Carla 生成一系列视频，包括 RGB 图像、语义分割图像、深度图像和边缘图像，用于控制 Cosmos Transfer。这些控制视频由 `carla_cosmos_gen.py` 脚本生成。Cosmos Transfer 将这些控制视频与文本提示和一些额外的调整参数结合使用，以生成视频的新变体。
+
+![](./img/rendering/transfer_sensor.jpg)
 
 
 此集成采用客户端-服务器架构。`cosmos_client.py` 脚本向 Cosmos Transfer 服务器发送查询，服务器负责完成请求并将视频发送回客户端（此过程需要 1-2 分钟）。为此，用户需要先部署 Cosmos Transfer 服务。下一节将介绍部署您自己的 Cosmos Transfer 服务的不同选项。
