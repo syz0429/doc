@@ -47,7 +47,7 @@ world = client.get_world()
 
 ## 加载地图  <span id="loading-a-map"></span>
 
-在 Carla API 中，[__世界__](python_api.md#carla.World) 对象提供对模拟的所有元素的访问，包括地图、地图内的对象，例如建筑物、交通信号灯、车辆和行人。Carla 服务器通常加载默认地图（通常为 Town10）。如果您想使用备用地图启动 Carla，请使用以下 `config.py`脚本：
+在 Carla API 中，[__世界__](python_api.md#carla.World) 对象提供对模拟的所有元素的访问，包括地图、地图内的对象，例如建筑物、交通信号灯、车辆和行人。Carla 服务器通常加载默认地图（通常为 Town10）。如果您想使用备用地图启动 Carla，请使用以下 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本：
 
 ```sh
 ./config.py --map Town05 

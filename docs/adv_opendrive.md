@@ -39,7 +39,7 @@
 * __`enable_mesh_visibility`__ *(default True)* — 如果 __False__，网格将不会被渲染，这可以为模拟器节省大量渲染工作。
 
 
-为了轻松测试此功能，`PythonAPI/util/` 中的`config.py` 脚本有一个新参数，`-x` 或`--xodr-path`。此参数需要一个带有 `.xodr` 文件路径的字符串，例如 `path/example.xodr`。如果使用此脚本生成网格，则使用的参数将始终为默认参数。
+为了轻松测试此功能，`PythonAPI/util/` 中的 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本有一个新参数，`-x` 或`--xodr-path`。此参数需要一个带有 `.xodr` 文件路径的字符串，例如 `path/example.xodr`。如果使用此脚本生成网格，则使用的参数将始终为默认参数。
 
 此功能可以使用 Carla 提供的新 __TownBig__ 进行测试。
 
@@ -49,7 +49,7 @@ python3 config.py -x opendrive/TownBig.xodr
 
 
 !!! 重要的
-    __[client.generate_opendrive_world()](python_api.md#carla.Client.generate_opendrive_world)__ 使用 __OpenDRIVE 文件的内容解析为字符串__ 。相反，__`config.py`__ 脚本需要 __`.xodr` 文件的路径__。
+    __[client.generate_opendrive_world()](python_api.md#carla.Client.generate_opendrive_world)__ 使用 __OpenDRIVE 文件的内容解析为字符串__ 。相反，__[config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py)__ 脚本需要 __`.xodr` 文件的路径__。
 
 !!! 笔记
 如果遇到`opendrive 无法正确解析`错误，请确保对`CarlaUE4/Content/Carla/Maps/OpenDrive/`目录有写权限。这是服务器正确解析`xodr`文件所必需的。
@@ -62,6 +62,7 @@ python3 config.py -x opendrive/TownBig.xodr
 
 ![opendrive_meshissue](img/opendrive_meshissue.jpg)
 <div style="text-align: center"><i>在生成交汇点网格时，较高的车道往往会阻挡下方的车道。 <br><code>smooth_junctions</code> 参数可防止此类问题。</i></div>
+
 
 除此之外，不是将整个地图创建为一个独特的网格，而是创建不同的部分。通过划分网格，模拟器可以避免渲染不可见的部分，并节省成本。工作更小还允许生成巨大的地图并包含可能出现在网格的一小部分上的问题。
 

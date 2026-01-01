@@ -32,7 +32,7 @@ settings.tile_stream_distance = 2000
 world.apply_settings(settings)
 ```
 
-您还可以使用以下 `config.py` 命令设置流传输距离:
+您还可以使用以下 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本设置流传输距离:
 
 ```sh
 cd PythonAPI/util
@@ -62,7 +62,7 @@ settings.actor_active_distance = 2000
 world.apply_settings(settings)
 ```
 
-您还可以使用以下 `config.py` 方法设置参与者活动距离
+您还可以使用以下 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本设置参与者活动距离：
 
 ```sh
 cd PythonAPI/util

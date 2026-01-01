@@ -50,11 +50,11 @@ __6.__ 单击导出面板中的 _导出_ 按钮，将所选区域的地图信息
 __可用 `.xodr` 格式选项：__
 
 - 在您自己的脚本中生成地图。 __该方法允许参数化。__
-- 将文件作为参数传递给 Carla 的 `config.py`。 __此方法不允许参数化。__
+- 将文件作为参数传递给 Carla 的 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 。 __此方法不允许参数化。__
 
 __可用 `.osm` 格式选项：__
 
-- 将文件作为参数传递给 Carla 的 `config.py`。 __此方法不允许参数化。__
+- 将文件作为参数传递给 Carla 的 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 。 __此方法不允许参数化。__
 
 以下部分将提供有关上面列出的选项的更多详细信息。
 
@@ -143,13 +143,13 @@ settings.set_traffic_light_excluded_way_types(["motorway_link"])
 ---
 ## 导入 Carla <span id="ingest-into-carla"></span>
 
-本节介绍如何使用可用的不同选项，通过 [OpenDRIVE 独立模式](adv_opendrive.md)将 Open Street Map 信息提取到 Carla 中。
+本节介绍如何使用可用的不同选项，通过 [OpenDRIVE 独立模式](adv_opendrive.md) 将 Open Street Map 信息提取到 Carla 中。
 
 有以下三个选项可供选择：
 
 [__A)__](#a-use-your-own-script) 使用您自己的自定义 Python 脚本中的转换 `.xodr` 文件 __生成地图该方法允许参数化__。 
-[__B)__](#b-pass-xodr-to-configpy) 将转换后的`.xodr`文件作为参数传递给 Carla `config.py` 脚本。__此方法不允许参数化。__
-[__C)__](#c-pass-osm-to-configpy) 将原始`.osm`文件作为参数传递给 Carla `config.py` 脚本。__此方法不允许参数化。__
+[__B)__](#b-pass-xodr-to-configpy) 将转换后的`.xodr`文件作为参数传递给 Carla [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本。__此方法不允许参数化。__
+[__C)__](#c-pass-osm-to-configpy) 将原始`.osm`文件作为参数传递给 Carla [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本。__此方法不允许参数化。__
 
 ###### A) 使用您自己的脚本
 
@@ -173,7 +173,7 @@ world = client.generate_opendrive_world(
 !!! 笔记
     强烈推荐`wall_height = 0.0`。OpenStreetMap 将相反方向的车道定义为不同的道路。如果生成墙壁，这将导致墙壁重叠和意外的碰撞。
 
-###### B) 将 `.xodr` 传递给 `config.py`
+###### B) 将 `.xodr` 传递给 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py)
 
 启动 Carla 服务器后，在单独的终端中运行以下命令来加载 Open Street Map：
 
@@ -184,7 +184,7 @@ python3 config.py -x=/path/to/xodr/file
 ```
 
 将使用 [默认参数](python_api.md#carla.OpendriveGenerationParameters) 。
-###### C) 将 `.osm` 传递给 `config.py`
+###### C) 将 `.osm` 传递给 [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py)
 
 启动 Carla 服务器后，在单独的终端中运行以下命令来加载 Open Street Map：
 

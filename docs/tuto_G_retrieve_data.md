@@ -123,7 +123,15 @@ python3 config.py --map Town01
 <br>
 
 ![tuto_map](img/tuto_map.jpg)
-<div style="text-align: center"><i>Town07 的空中视角</i></div>
+<div class="div" style="text-align: center"><i>Town07 的空中视角</i></div>
+
+<style>
+.div {
+    height: 10px;
+    line-height: 1px;
+}
+</style>
+
 
 ### 天气设置 <span id="weather-setting"></span>
 
@@ -168,7 +176,10 @@ python3 environment.py --clouds 100 --rain 80 --wetness 100 --puddles 60 --wind 
 <br>
 
 ![tuto_weather](img/tuto_weather.jpg)
-<div style="text-align: center"><i>使用天气改变</i></div>
+<div class="div" style="text-align: center"><i>使用天气改变</i></div>
+
+
+
 
 ---
 ## 设置交通流量 <span id="set-traffic"></span>
@@ -204,8 +215,9 @@ python3 spawn_npc.py -n 50 -w 50 --safe
 ```
 </details>
 <br>
+
 ![tuto_spawning](img/tuto_spawning.jpg)
-<div style="text-align: center"><i>生成车辆以模拟交通。</i></div>
+<div class="div" style="text-align: center"><i>生成车辆以模拟交通</i></div>
 
 ### SUMO 协同模拟交通 <span id="sumo-co-simulation-traffic"></span>
 
@@ -239,7 +251,7 @@ python3 run_synchronization.py examples/Town01.sumocfg --sumo-gui
 该脚本生成的流量是 Carla 团队创建的示例。默认情况下，它会沿着相同的路线生成相同的车辆。用户可以在 SUMO 中更改这些内容。
 
 ![tuto_sumo](img/tuto_sumo.jpg)
-<div style="text-align: center"><i>SUMO 和 Carla 协同模拟交通</i></div>
+<div class="div" style="text-align: center"><i>SUMO 和 Carla 协同模拟交通</i></div>
 
 !!! 警告
     目前，SUMO 联合模拟还是测试版功能。车辆没有物理特性，也不考虑 Carla 交通信号灯。
@@ -336,7 +348,7 @@ ego_cam = world.spawn_actor(cam_bp,cam_transform,attach_to=ego_vehicle, attachme
 ego_cam.listen(lambda image: image.save_to_disk('tutorial/output/%.6d.jpg' % image.frame))
 ```
 ![tuto_rgb](img/tuto_rgb.jpg)
-<div style="text-align: center"><i>RGB 相机输出</i></div>
+<div class="div" style="text-align: center"><i>RGB 相机输出</i></div>
 
 ### 检测器 <span id="viewing"></span>
 
@@ -395,7 +407,7 @@ def obs_callback(obs):
 ego_obs.listen(lambda obs: obs_callback(obs))
 ```
 ![tuto_detectors](img/tuto_detectors.jpg)
-<div style="text-align: center"><i>检测传感器输出</i></div>
+<div class="div" style="text-align: center"><i>检测传感器输出</i></div>
 
 ### 其他传感器 <span id="other-sensors"></span>
 
@@ -439,7 +451,7 @@ ego_imu.listen(lambda imu: imu_callback(imu))
 ```
 
 ![tuto_other](img/tuto_other.jpg)
-<div style="text-align: center"><i>全球导航卫星系统和惯性测量单元传感器输出</i></div>
+<div class="div" style="text-align: center"><i>全球导航卫星系统和惯性测量单元传感器输出</i></div>
 
 ---
 ## 设置高级传感器 <span id="set-advanced-sensors"></span>
@@ -472,7 +484,7 @@ depth_cam.listen(lambda image: image.save_to_disk('tutorial/new_depth_output/%.6
 ```
 
 ![tuto_depths](img/tuto_depths.jpg)
-<div style="text-align: center"><i>深度相机输出（左侧为简单转换，右侧为对数转换）</i></div>
+<div class="div" style="text-align: center"><i>深度相机输出（左侧为简单转换，右侧为对数转换）</i></div>
 
 ### 语义分割相机 <span id="语义分割相机"></span>
 
@@ -500,7 +512,7 @@ sem_cam.listen(lambda image: image.save_to_disk('tutorial/new_sem_output/%.6d.jp
 ```
 
 ![tuto_sem](img/tuto_sem.jpg)
-<div style="text-align: center"><i>语义分割相机输出</i></div>
+<div class="div" style="text-align: center"><i>语义分割相机输出</i></div>
 
 
 ### 激光雷达光线投射传感器 <span id="激光雷达光线投射传感器"></span>
@@ -551,7 +563,7 @@ meshlab
 __3.__ 打开其中一个 _.ply_ 文件。 `File > Import mesh...` 
 
 ![tuto_lidar](img/tuto_lidar.jpg)
-<div style="text-align: center"><i>经过Meshlab处理后的激光雷达输出。</i></div>
+<div class="div" style="text-align: center"><i>经过Meshlab处理后的激光雷达输出。</i></div>
 
 ### 雷达传感器 <span id="雷达传感器"></span>
 
@@ -617,7 +629,7 @@ rad_ego.listen(lambda radar_data: rad_callback(radar_data))
 ```
 
 ![tuto_radar](img/tuto_radar.jpg)
-<div style="text-align: center"><i>雷达输出。车辆停在交通信号灯处，因此其前面的静态元素显示为白色。</i></div>
+<div class="div" style="text-align: center"><i>雷达输出。车辆停在交通信号灯处，因此其前面的静态元素显示为白色。</i></div>
 
 ---
 ## 非渲染模式 <span id="no-rendering-mode"></span>
@@ -672,7 +684,8 @@ python3 no_rendering_mode.py --no-rendering
 <br>
 
 ![tuto_no_rendering](img/tuto_no_rendering.jpg)
-<div style="text-align: center"><i>no_rendering_mode.py 在 Town07 中运行</i></div>
+<div class="div" style="text-align: center"><i>no_rendering_mode.py 在 Town07 中运行</i></div>
+
 
 !!! 笔记
     在此模式下，基于 GPU 的传感器将检索空数据。摄像头没用，但探测器等其他传感器可以正常工作。
@@ -767,13 +780,13 @@ print(client.show_recorder_collisions("~/tutorial/recorder/recording01.log",'v',
     记录器不需要打开即可进行查询。
 
 ![tuto_query_frames](img/tuto_query_frames.jpg)
-<div style="text-align: center"><i>显示重要事件的查询。这是自主车辆产生的框架。</i></div>
+<div class="div" style="text-align: center"><i>显示重要事件的查询。这是自主车辆产生的框架。</i></div>
 
 ![tuto_query_blocked](img/tuto_query_blocked.jpg)
-<div style="text-align: center"><i>查询显示参与者被阻止。在此模拟中，自主车辆保持阻塞状态 100 秒。</i></div>
+<div class="div" style="text-align: center"><i>查询显示参与者被阻止。在此模拟中，自主车辆保持阻塞状态 100 秒。</i></div>
 
 ![tuto_query_collisions](img/tuto_query_collisions.jpg)
-<div style="text-align: center"><i>显示自主车辆与“其他”类型的对象之间的碰撞的查询。</i></div>
+<div class="div" style="text-align: center"><i>显示自主车辆与“其他”类型的对象之间的碰撞的查询。</i></div>
 
 !!! 笔记
     获取每一帧的详细文件信息可能会让人不知所措。在其他查询之后使用它来了解要查看的位置。 
