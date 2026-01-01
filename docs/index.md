@@ -213,7 +213,7 @@ title: 主页
 
 [__内容创作-地图__](tuto_content_authoring_maps.md) — 自定义地图的创作
 
-[__在 RoadRunner 中创建地图__](tuto_M_generate_map.md) — 如何在 RoadRunner 中生成海关、标准尺寸的地图
+[__在 RoadRunner 中创建地图__](tuto_M_generate_map.md) — 如何在 RoadRunner 中生成定制的、标准尺寸的地图
 
 [__在 HUTB 包导入地图__](tuto_M_add_map_package.md) 如何在 HUTB 包中导入地图
 
