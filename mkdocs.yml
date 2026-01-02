@@ -46,20 +46,22 @@ extra:
 copyright: OpenHUTB 版权所有 &copy; 2025
 
 nav:
-- 首页: 'index.md'
-#- 入门: '#_1'
-#- 主题: '#_2'
-#- 交通: '#_3'
-#- 行人: "#_4"
-#- 高级概念: '#_5'
-#- 自定义地图: '#_6'
-#- 自定义开发: '#_7'
-#- 基准测试: "#_8"
-#- 生态系统: '#_9'
-#- 源代码编译: '#_10'
-#- 贡献: '#_11'
-#- 其他: '#_12'
-#- 参考: '#_13'
+- 简介:
+  - 入门: 'introduction.md'
+  - 人: 'pedestrian.md'
+  - 车: 'vehicle.md'
+- 模拟:
+  - 概念: 'concept.md'
+  - 模块: 'modules.md'
+  - 开发: 'development.md'
+- 简介:
+  - 地图孪生: 'map_twin.md'
+  - 资产孪生: 'assert_twin.md'
+  - 模拟引擎: 'unreal_engine.md'
+- 其他:
+  - 参考目录: 'ref.md'
+  - 生态系统: 'ecology.md'
+  - 贡献指南: 'contribution.md'
 
 # - mdx_math 用于行内公式显示
 markdown_extensions:
