@@ -38,7 +38,7 @@
 
 ## 文档部署
 
-1. 安装 python 3.11，使用`pip`安装`mkdocs`
+1. 安装 python 3.11+，使用`pip`安装`mkdocs`
 ```shell
 # 只克隆主分支
 git clone -b master --single-branch https://github.com/OpenHUTB/doc
@@ -80,7 +80,7 @@ git clone https://github.com/OpenHUTB/mkdocs.git
 cd mkdocs
 python -m pip install . -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
 ```
-然后使用新的mkdocs执行步骤1-3。
+然后使用新的 mkdocs 执行步骤 1-3。
 
 
 ## 软件发布
@@ -107,7 +107,7 @@ python -m pip install . -i http://mirrors.aliyun.com/pypi/simple --trusted-host 
 
 - 页面跳转
 1. 定义一个锚(id)： `<span id="jump"></span>` 或 `<span id="jump">跳转到的地方</span>`
-2. 使用markdown语法：`[点击跳转](#jump)`
+2. 使用 markdown 语法：`[点击跳转](#jump)`
 
 
 ### 颜色规范
@@ -120,7 +120,7 @@ python -m pip install . -i http://mirrors.aliyun.com/pypi/simple --trusted-host 
 ```shell
 **<font color="#7fb800">method</font>**
 ```
-蓝色的函数参数名 <font color="#00a6ed">self</font>：
+蓝色的函数参数名 **<font color="#00a6ed">self</font>** ：
 ```shell
 **<font color="#00a6ed">self</font>**
 ```
@@ -176,23 +176,23 @@ $$
 ## 常见问题
 * 编译文档时报错：`ERROR - Config value: ‘plugins‘. Error: The “redirects“ plugin is not installed`
 
-> [解决](https://blog.csdn.net/LostSpeed/article/details/127192365) ：
-> ```shell
-> pip install redirects
-> ```
+  > [解决](https://blog.csdn.net/LostSpeed/article/details/127192365) ：
+  > ```shell
+  > pip install redirects
+  > ```
 
 
 * 编译文档时报错：`Config value: 'markdown_extensions'. Error: Failed loading extension "mdx_gh_links".`
-> 解决：[手动安装库](https://github.com/mkdocs/mkdocs/issues/1587) ：
-> ```shell
-> pip install mdx_gh_links
-> ```
+  > 解决：[手动安装库](https://github.com/mkdocs/mkdocs/issues/1587) ：
+  > ```shell
+  > pip install mdx_gh_links
+  > ```
 
 * 克隆仓库时报错：`fatal: fetch-pack: invalid index-pack output`
-> 解决：
-> ```shell
-> # 设置下载缓存参数
-> git config --global http.postBuffer 2G
-> # 确认参数是否正确设置
-> git config http.postBuffer
-> ```
+  > 解决：
+  > ```shell
+  > # 设置下载缓存参数
+  > git config --global http.postBuffer 2G
+  > # 确认参数是否正确设置
+  > git config http.postBuffer
+  > ```
