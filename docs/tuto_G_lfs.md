@@ -7,14 +7,23 @@ git init .
 git lfs install
 git lfs track "*"
 git add .gitattributes
-git commit -m "Add \"*.bigfile\" LFS config "
+git commit -m "init LFS config"
 
 # 添加大文件
 git add dyrone.bigfile
 git commit -m "Add a really big file"
 # 查看跟踪的大文件
 git lfs track
-git push
+# 推送
+git remote add origin https://git.code.tencent.com/OpenHUTB/dependencies.git
+git push --set-upstream origin master
+```
+
+.gitattributes文件内容为（除了该文件其他都用大文件跟踪）：
+```text
+*               filter=lfs diff=lfs merge=lfs -text
+.gitattributes  filter= diff= merge= text
+
 ```
 
 常用命令

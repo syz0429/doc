@@ -1,20 +1,28 @@
 # CARLA 游戏模块说明
 
+本模块的代码结构如下：
+
+	Game
+    ├── CarlaEngine                  # 引擎
+    ├── CarlaEpisode                 # 回合
+    ├── CarlaGameInstance            # 游戏实例
+    ├── CarlaGameModeBase            # 游戏模式基类
+    ├── CarlaHUD                     # 头部显示器
+    ├── CarlaStaticDelegates         # 统计代表
+    └── CarlaStatics                 # 代表
+    └── FrameData                    # 帧数据
+    └── TaggedComponent              # 带标签的组件
+    └── TaggedMaterials              # 带标签的材质
+    └── Tagger                       # 标签
+    └── TaggerDelegate               # 标签代表
 
 - [引擎模块](#engine_module)
 
 
 
-
-
-
-
 # 引擎模块  <span id="engine_module"></span>
-主要函数
 
-代码结构
 
-贡献代码
 
 ## 简介 <span id="introduction"></span>
 
@@ -69,8 +77,9 @@ CARLA
 │   │   │   │   │   │   │   ├── CarlaEpisode.h
 │   │   │   │   │   │   │   ├── CarlaStatics.h
 
+# 回合模块 <span id="episode_module"></span> 
 
-# 游戏模块 <span id="game_module"></span>
+# 游戏模式基类模块 <span id="game_module"></span>
 
 ---
 
@@ -84,6 +93,7 @@ CARLA
 ---
 
 ## 📝模块概述
+
 `Game`模块是 HUTB 项目在引擎中的核心逻辑模块，负责管理人车仿真场景的完整生命周期。其核心功能包括：
 - **场景管理**：加载 OpenDRIVE 地图、动态设置天气及交通规则；
 - **角色控制**：生成车辆、行人、传感器等实体，并绑定物理行为（如车辆移动组件）；
@@ -92,7 +102,7 @@ CARLA
 - **ROS2 集成**：通过帧同步机制与 ROS2 通信，发布传感器消息（需启用`WITH_ROS2`宏）；
 - **语义分割**：为生成的角色分配语义标签（如`CustomDepthStencilValue`），支持自动驾驶算法训练与可视化。
 
-该模块通过 **游戏模式基类** [`CarlaGameModeBase`](https://github.com/OpenHUTB/hutb/blob/hutb/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Game/CarlaGameModeBase.h) 、**剧情** `CarlaEpisode` 等核心类协调引擎与 HUTB 服务端的交互，是连接游戏逻辑与人车模拟的关键桥梁。
+该模块通过 **游戏模式基类** [`CarlaGameModeBase`](https://github.com/OpenHUTB/hutb/blob/hutb/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Game/CarlaGameModeBase.h) 、**回合** `CarlaEpisode` 等核心类协调引擎与 HUTB 服务端的交互，是连接游戏逻辑与人车模拟的关键桥梁。
 
 ---
 ## 📚核心功能详解
@@ -126,9 +136,10 @@ CARLA
     }
   }
   ```
-### 2.2 角色控制
+### 2.2 参与者控制
+
 #### **实体生成**
-- **Actor 生成逻辑**：通过`CarlaGameModeBase`的`SpawnActor`方法生成车辆、行人、传感器。
+- **Actor 生成逻辑**：通过`World`的`SpawnActor`方法生成车辆、行人、传感器。
   ```cpp
   AActor* CarlaGameModeBase::SpawnActor(TSubclassOf<AActor> Class) {
     return GetWorld()->SpawnActor(Class, &Transform); // 在指定位置生成Actor
@@ -253,7 +264,10 @@ CARLA
 | **OpenDrive**  | 1                    | OpenDRIVE 地图文件解析           |
 
 详细模块关系参考：[ :octocat: ](https://openhutb.github.io/carla_cpp/dir_b708e75f0564cefaa95a07ef1c60fa1d.html)
+
+
 ## 📜类与方法详解
+
 ### **4.1 ACarlaGameModeBase**
 - **功能**：游戏模式基类，负责场景初始化和全局逻辑控制。
 - **关键方法**：
@@ -373,26 +387,7 @@ CARLA
 ---
 
 
-## 📝模块调用逻辑
 
-本模块的代码结构如下：
-
-	Game
-    ├── LibCarla (51)                # 核心交互
-    │   ├── LoadMap()                # 地图加载
-    │   ├── SetWeather()             # 天气设置
-    │   └── VehicleControl()         # 车辆控制
-    ├── Recorder (25)                # 录制与回放
-    │   ├── StartRecording()         # 开始录制
-    │   └── PlayBack()               # 回放
-    ├── Sensor (6)                   # 传感器
-    │   ├── CaptureData()            # 数据采集
-    │   └── SendToServer()           # 数据传输
-    ├── Settings (9)                 # 配置管理
-    ├── Traffic (5)                  # 交通规则
-    │   ├── Lights (4)               # 信号灯控制
-    ├── Util (6)                     # 工具函数
-    └── Weather (2)                  # 动态天气
 
 ## ❗注意事项
 ### **6.1 性能优化**
@@ -451,3 +446,5 @@ CARLA
 - **调试工具**：  
   - 启用 `CarlaHUD` 的调试模式，实时显示帧率、内存占用等关键指标。  
   - 利用 `AsyncDataStreamImpl` 的日志功能追踪传感器数据传输异常。
+
+

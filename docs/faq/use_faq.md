@@ -9,6 +9,10 @@
 
 > 服务端和客户端版本不一致，比如服务端是ue4-dev的最新代码，而客户端为0.9.15的代码。
 
+* 连接不上服务端，又没有报错信息
+
+> 很可能是因为和 PythonAPI 相关的 [LibCarla 模块](https://github.com/OpenHUTB/hutb/issues/3200#issuecomment-3717221506) 做了更新，而客户端 whl 文件没有更新。
+
 
 ## 库的问题
 * matplotlib 调用`plt.plot()`报错：`TypeError: int() argument must be a string, a bytes-like object or a number, not 'KeyboardModifier'`
