@@ -148,7 +148,9 @@ settings.set_traffic_light_excluded_way_types(["motorway_link"])
 有以下三个选项可供选择：
 
 [__A)__](#a-use-your-own-script) 使用您自己的自定义 Python 脚本中的转换 `.xodr` 文件 __生成地图该方法允许参数化__。 
+
 [__B)__](#b-pass-xodr-to-configpy) 将转换后的`.xodr`文件作为参数传递给 Carla [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本。__此方法不允许参数化。__
+
 [__C)__](#c-pass-osm-to-configpy) 将原始`.osm`文件作为参数传递给 Carla [config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) 脚本。__此方法不允许参数化。__
 
 ###### A) 使用您自己的脚本
