@@ -155,6 +155,7 @@ ___
 git clone https://github.com/OpenHUTB/mkdocs.git
 cd mkdocs
 pip install 'build<0.10.0'
+# 修mkdocs代码改后，将 `mkdocs\__init__.py` 中的版本号+1：
 python -m build
 twine upload dist/*
 # 用户名为`__token__`，密码为token。
