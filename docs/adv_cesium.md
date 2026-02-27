@@ -2,29 +2,33 @@
 
 ## 导入道路和红绿灯
 
-0.将 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的 <font color="#00a6ed">software/cesium/RoadRunner插件.zip</font> 解压到 <font color="#00a6ed">carla\Unreal\CarlaUE4\Plugins</font> ，运行`make launch`重启编辑器。
+0.将 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的 <font color="#00a6ed">software/cesium/RoadRunner插件.zip</font> 解压到 <font color="#00a6ed">hutb\Unreal\CarlaUE4\Plugins</font> ，运行`make launch`重启编辑器。
 
-1.在 <font color="#00a6ed">carla\Unreal\CarlaUE4\Content\roadrunner</font> 中新建 <font color="#00a6ed">static</font>（放资产）和 <font color="#00a6ed">map</font>（放地图）；
+1.在 <font color="#00a6ed">hutb\Unreal\CarlaUE4\Content\roadrunner</font> 中新建 <font color="#00a6ed">static</font>（放资产）和 <font color="#00a6ed">map</font>（放地图）；
 
 在编辑器中static目录中右键导入 <font color="#00a6ed">baidutest2test.fbx</font> 。
 导入选项：
 勾选 纹理中 <font color="#00a6ed">反转法线贴图</font> 。
 
 
-2.将 <font color="#00a6ed">light.umap</font> 拷贝到 <font color="#00a6ed">carla\Unreal\CarlaUE4\Content\roadrunner\map</font> 路径下。
+2.将 <font color="#00a6ed">light.umap</font> 拷贝到 <font color="#00a6ed">hutb\Unreal\CarlaUE4\Content\roadrunner\map</font> 路径下。
 
-3.在虚幻编辑器中点“文件”菜单中的“关卡另存为”（方便管理，把地图和红绿灯放一块），选择 <font color="#00a6ed">carla\Unreal\CarlaUE4\Content\roadrunner\map</font> 
+3.在虚幻编辑器中点“文件”菜单中的“将当前关卡另存为”（方便管理，把地图和红绿灯放一块），选择 <font color="#00a6ed">hutb\Unreal\CarlaUE4\Content\roadrunner\map</font> 
 
-4.将 <font color="#00a6ed">light.umap</font> 引入到 <font color="#00a6ed">baidutest2test.umap</font>（虚幻编辑器中点“窗口”菜单中的“关卡”，将 <font color="#00a6ed">carla\Unreal\CarlaUE4\Content\roadrunner\map\light</font> 拖入到关卡窗口中->右键light，修改流送方式->固定加载）。
+4.将 <font color="#00a6ed">light.umap</font> 引入到 <font color="#00a6ed">baidutest2test.umap</font>（虚幻编辑器中点“窗口”菜单中的“关卡”，将`内容浏览器`中的 <font color="#00a6ed">hutb\Unreal\CarlaUE4\Content\roadrunner\map\light</font> 拖入到关卡窗口中 -> 右键light，修改流送方式->固定加载）。
 
-5.将 <font color="#00a6ed">light.umap</font> 引入到 <font color="#00a6ed">carla\Unreal\CarlaUE4\Content\Carla\Maps\OpenDrive\baidutest2test.xodr</font> 拷贝到 <font color="#00a6ed">carla\Unreal\CarlaUE4\Content\roadrunner\map\OpenDrive\baidutest2test.xodr</font> 
+5.将 <font color="#00a6ed">hutb\Unreal\CarlaUE4\Content\Carla\Maps\OpenDrive\baidutest2test.xodr</font> 拷贝到 <font color="#00a6ed">hutb\Unreal\CarlaUE4\Content\roadrunner\map\OpenDrive\baidutest2test.xodr</font> 
 
 
-## 倾斜模型导入Carla
+## 倾斜模型导入 HUTB
 
-1.下载并解压 [Cesium for Unreal 插件](https://github.com/CesiumGS/cesium-unreal/releases/download/v1.18.0-ue4/CesiumForUnreal-426-v1.18.0-ue4.zip) 到CarlaUE引擎的plugins/Marketplace文件夹下：
+1.下载并解压 [Cesium for Unreal 插件](https://github.com/OpenHUTB/cesium) 到插件目录`hutb\Unreal\CarlaUE4\Plugins\CesiumForUnreal`下：
+
 
 ![](img/cesium/plugins.png)
+
+!!! 注意
+    只有加载了 Cesium 插件后才能在`内容浏览器`中看到地图`baidutest2test.umap`。
 
 2.如果CesiumForUnreal未启用，则在CarlaUE中添加插件
 
@@ -32,28 +36,35 @@
 >> ![](img/cesium/add_plugin.png)
 添加完成后重启引擎。
 
-3.添加插件对象到场景中，配置参数和模型路径：
-
-<font color="#00a6ed">CesiumGeoreference</font> 设置为：`28.235238,  112.877178,  0`
-
-<font color="#00a6ed">Source</font> 设置为`File:///D:/model1/model1/tileset.json`。<br>
+3.添加插件对象到场景中：
 
 >>> ![](img/cesium/add_plugin_object.png) 
 
+添加插件对象到场景中：
+
+从`世界大纲视图`中选中`CesiumGeoreference`，其中，原点的纬度`Origin Latitude`、原点的经度`Origin Longitude`、原点的高度`Origin Height`分别设置为
+：`28.235238,  112.877178,  0`
+
 >>> ![](img/cesium/config_parameter.png)
+
+从`世界大纲视图`中选中`Cesium3DTileset`：
+<font color="#00a6ed">Source</font> 设置为`File:///D:/model1/model1/tileset.json`。<br>
 
 >>> ![](img/cesium/config_model_path.png)
 
 !!! 注意
     从[链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的 <font color="#00a6ed">map</font> 文件夹内下载<font color="#00a6ed">中电软件园_cesium_model.zip</font>并解压。这里测试用的是本地路径，也可以用静态资源服务。
 
-去掉 <font color="#00a6ed">Keep World Origin Near Camear</font> 勾选。
+[去掉](https://cloud.tencent.com/developer/article/2206873) <font color="#00a6ed">Keep World Origin Near Camear</font> 勾选。
 
-（4.将 Trees.umap 中放到本地文件夹下，菜单中点击 <font color="#00a6ed">窗口->关卡</font> ，从 <font color="#00a6ed">内容浏览器</font> 中将 <font color="#00a6ed">Trees.umap</font> 拖进导弹出界面，然后右键 <font color="#00a6ed">Trees</font> ，选择 <font color="#00a6ed">修改流送方法->固定加载</font> 。）
+!!! 笔记
+    如果启用`Keep World Origin Near Camear`选项，在运行态下，世界坐标原点会随着镜头的变化而变化，从而导致所有的actor（非Geo对象）的坐标都产生变化。  一般建议在小场景下，关闭此选项。  该选项的目的是在大场景下，避免对象的坐标值很大，超过UE可以能够存储的精度。
+
+（4.确定 Trees.umap 放到本地文件夹`roadrunner/map`下，菜单中点击 <font color="#00a6ed">窗口->关卡</font> ，从 <font color="#00a6ed">内容浏览器</font> 中将 <font color="#00a6ed">Trees.umap</font> 拖进导弹出界面，然后右键 <font color="#00a6ed">Trees</font> ，选择 <font color="#00a6ed">修改流送方法->固定加载</font> 。）
 
 （5.在<font color="#00a6ed">世界大纲视图</font>中选中 <font color="#00a6ed">Cesium3DTileset</font> ，将 <font color="#00a6ed">Cesium</font> 中的 <font color="#00a6ed">Mobility</font> 修改为 <font color="#00a6ed">可移动</font> 。）
 
-（6.添加光源 <font color="#00a6ed">DirectionalLight</font> 、<font color="#00a6ed">ExponentialHeightFog</font>、<font color="#00a6ed">SkyAtmosphere</font>、<font color="#00a6ed">SkyLight</font>。）
+（6.添加光源 <font color="#00a6ed">定向光源(DirectionalLight)</font> 、<font color="#00a6ed">指数级高度雾(ExponentialHeightFog)</font>、<font color="#00a6ed">天空大气(SkyAtmosphere)</font>、<font color="#00a6ed">天光(SkyLight)</font>。）
 
 7.模型在CarlaUE中的场景效果
 
@@ -130,7 +141,7 @@ RoutePlanner证明路口和路是断开的
 
 #### 源代码分析
 
-加载的逻辑位于 carla\Unreal\CarlaUE4\Plugins\Marketplace\CesiumForUnreal\Source\CesiumRuntime\Private\Cesium3DTileset.cpp 中的：
+加载的逻辑位于 `hutb\Unreal\CarlaUE4\Plugins\Marketplace\CesiumForUnreal\Source\CesiumRuntime\Private\Cesium3DTileset.cpp` 中的：
 ```shell
 this->_pTileset = MakeUnique<Cesium3DTilesSelection::Tileset>(
     externals,

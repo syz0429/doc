@@ -1,4 +1,5 @@
 # OpenDriveParser 说明文档
+
 本文件定义了人车模拟器中用于解析 OpenDRIVE 地图数据的 OpenDriveParser 类。该类位于 carla::opendrive 命名空间中，主要职责是从 OpenDRIVE XML 文件中读取道路网络数据，并将其转换为内部表示形式。
 
 ##  什么是 OpenDRIVE？
@@ -17,6 +18,25 @@
 🔹  **交通元素**：如交通灯、路标、限速牌、信号控制器等；
 
 🔹  **参考坐标系**：地理定位支持（支持 UTM、WGS84 投影）。
+
+
+### 文件格式说明
+
+更新前和更新后的 geoReference：
+```xml
+<geoReference><![CDATA[+proj=tmerc +lat_0=0 +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +geoidgrids=egm96_15.gtx +vunits=m +no_defs ]]></geoReference>
+
+<geoReference><![CDATA[+proj=tmerc +lat_0=0 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6378137.0 +b=6378137.0]]></geoReference>
+```
+
+* +datum=WGS84：使用 WGS84 地球基准。
+
+* +units=m：水平单位为米。
+* +geoidgrids=egm96_15.gtx：使用 EGM96 15′ 大地水准面格网进行高程改正。
+* +vunits=m：垂直单位为米。
+* +no_defs：不加载默认 PROJ 定义文件中的额外参数。
+
+geoReference 用来说明 OpenDRIVE 坐标系与真实地理坐标（经纬度/投影）之间的映射关系，通常包含投影参数（如 UTM）、基准、偏移等。作用是让地图数据能与 GNSS/地理坐标对齐，便于定位、与其他地理数据叠加。
 
 ### 文件扩展名：`.xodr`
 OpenDRIVE 文件通常以 `.xodr` 为扩展名，是一个标准的 XML 文件，主要结构包括：

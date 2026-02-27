@@ -217,6 +217,7 @@ A simulator and scene editor for autonomous driving.
 
 [解决上传出熬过100M大文件的问题](dev/gitee.md) 。
 
+
 ### 发布到 huggingface
 ```shell
 # 添加远程仓库链接
@@ -226,6 +227,37 @@ git push huggingface
 python -m pip install -U "huggingface_hub[cli]"
 huggingface-cli login
 ```
+注意：不能使用用户名密码进行推送，配置Token方法：
+```shell
+git xet install
+git clone https://huggingface.co/datasets/OpenHUTB/hutb
+git add hutb.zip
+# git lfs ls-files
+git commit -m "init"
+git remote set-url origin  https://OpenHUTB:<token>@huggingface.co/datasets/OpenHUTB/hutb
+# git remote set-url origin https://<user_name>:<token>@huggingface.co/<repo_path>
+git push
+```
+
+### [发布到微软商城](https://blog.csdn.net/csdn_ad986ad/article/details/135417415)
+
+1. 打开操作系统的 [开发者选项](https://blog.csdn.net/2301_77171572/article/details/146528815) 。
+
+2. 双击安装`.pfx`证书，必须放入`本地计算机`（而不是`当前用户`）的“受信任的根证书颁发机构”，然后选择`将所有的证书都放入下列存储(P)`->`受信任的根证书颁发机构`。
+
+确认 makeappx.exe 是否存在，比如：
+```
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64
+```
+
+问题：
+```
+包 URL 应以 https:// 开头，并且应指向版本控制、可下载的包。
+```
+
+
+[使用MSIX Packaging Tool工具修改msix程序包](https://www.cnblogs.com/oboth-zl/p/17638705.html)
+
 
 ## 问题
 点击打包后的文件出现错误：
