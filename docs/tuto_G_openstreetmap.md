@@ -42,6 +42,9 @@ __6.__ 单击导出面板中的 _导出_ 按钮，将所选区域的地图信息
 
 ![openstreetmap_area](img/tuto_g_osm_area.jpg)
 
+!!! 笔记
+	如果 OpenStreetMap 中的地图有错误或不精确，可以通过[编辑地图](adv_edit_openstreetmap.md)进行改进。
+
 ---
 ## 在 Carla 中使用 OpenStreetMaps <span id="using-openstreetmaps-in-carla"></span>
 
