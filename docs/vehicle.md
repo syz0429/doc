@@ -17,6 +17,8 @@
 
 [__交通场景定义__](tuto_G_scenic.md) — 遵循使用 Scenic 库定义不同场景的示例
 
+[__OpenDRIVE独立模式__](adv_opendrive.md) — 仅使用 OpenDRIVE 文件生成道路网格。允许在 Carla 中加载任何 OpenDRIVE 地图，无需创建资源。
+
 [__和 SUMO 协同模拟__](adv_sumo.md) — 在 HUTB 和 SUMO 之间运行协同模拟
 
 [__Chrono 集成__](tuto_G_chrono.md) — 整合 Chrono 来进行物理模拟
