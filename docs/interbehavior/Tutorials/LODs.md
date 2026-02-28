@@ -112,8 +112,8 @@ LOD = "Level of Detail"（层次细节模型）
 	![BulkEditMatrix](../Figures/LODs/bulk_edit_matrix.jpg)
 6. 在打开的`Bulk Edit`窗口中，验证左侧所有正确的骨架网格体，然后在右侧的 `LODSettings` 中，单击 3x3 网格图标（选择资产）并选择新创建的 `SM_Vehicle_LODSettings.uasset` 资产。
 
-   1. To apply this to all the selected skeletal meshes, go to the top bar -> `File` -> `Save`
-   2. The end result should look something like this:
+   1. 要将此设置应用于所有选定的骨骼网格，请转到顶部菜单栏 -> `File` -> `Save`
+   2. 最终结果应该类似于这样：
 	![BulkEdit](../Figures/LODs/bulk_edit.jpg)
 
 As mentioned in step 4, some particular vehicles cause a seg-fault after giving them this `LODSettings`. We are still investigating why exactly but for now its safer to just manually go into each vehicle and tune the individual `LOD` settings after checking `Custom` and seeing the `LOD0`, `LOD1`, `LOD2`, ... etc. options. 
