@@ -104,32 +104,36 @@
 
 ### 相对路径加载资产
 
-1.在“世界大纲视图”中搜索 <font color="#00a6ed">FbxScene_baidutest2test</font> ，编辑编辑
+1. 在“世界大纲视图”中搜索 <font color="#00a6ed">FbxScene_baidutest2test</font> ，选中并点击`编辑Fbx...`
 
 
-2.事件开始运行
+2. 右键“附加”（字符串-附件加），点击`添加引脚`由2个输入变成3个。其中 A 为: <font color="#00a6ed">file:///</font> ，B 从`项目内容目录`连接来，C 为: <font color="#00a6ed">roadrunner/ccsp/tileset.json</font>  
 
-3.右键加一个“根目录”
-
-4.右键“附加”（字符串-附件），由2个输入变成3个。其中 A 为: <font color="#00a6ed">file:///</font> ，B 从根目录连接来，C 为: <font color="#00a6ed">ccsp/tileset.json</font>  
-
-cesium：  
-
-5.在左边“我的蓝图”中新建一个变量 Cesium3DTileset（cesium）， 
-右边“细节”中的“变量类型”改变为 <font color="#00a6ed">Cesium3Dtiles</font>
-
-6.右键 获取 Cesium 3DTileset   （组件 设置）  右边修改“默认值”（浏览）
+3. 右键加一个`项目内容目录`，连接到`附加`模块的输入`B`；
 
 
-7.连接到 <font color="#00a6ed">SET url</font>（设置 Url）  Ceisium 3DTileset
+4. 在左边“我的蓝图”中新建一个变量，名字为 Cesium3DTileset（cesium）， 右边“细节”中的“变量类型”改变为 <font color="#00a6ed">Cesium3Dtiles -> 对象引用</font>
 
-问题：不可编辑类默认对象中的此值。
 
-解决：将 Cesium3DTileset 拖动到不可编辑的地方（保存不了）。
+5. 右键 `获取 Cesium 3DTileset`，从`Cesium 3DTileset`中引出并输入选择 <font color="#00a6ed">SET url</font>（设置 Url），点击菜单中的`编译`，右边修改“默认值”（浏览）
 
-报错：图表被连接到外部映射中的对象。
 
-原因：蓝图中引用了外部的Cesium3DTileset。
+6. `事件开始运行`向外引出到`SET`
+
+
+* 问题：蓝图运行时错误："“无访问”正在尝试读取属性 Cesium3DTileset
+
+    因为在 Cesium 瓦片集（Tileset）加载完成前，蓝图就试图对其进行操作
+
+* 问题：不可编辑类默认对象中的此值。
+
+    解决：将 Cesium3DTileset 拖动到不可编辑的地方（保存不了）。
+
+* 报错：图表被连接到外部映射中的对象。
+
+    原因：蓝图中引用了外部的 Cesium3DTileset。
+
+![](img/cesium/bp_settings.jpg)
 
 
 选中交通灯，“细节”中的 BoxTrigger、TotalVolume起作用，调整缩放xy。
@@ -138,16 +142,38 @@ cesium：
 
 RoutePlanner证明路口和路是断开的
 
+### 程序相对路径加载瓦片
+
+```
+File:///D:/hutb/Unreal/CarlaUE4/Content/roadrunner/ccsp/tileset.json
+// this->Url = TEXT("File:///./roadrunner/ccsp/tileset.json");
+this->Url = FPaths::Combine(FPaths::ProjectDir(), TEXT("/roadrunner/ccsp/tileset.json"));
+```
+
+FPaths::RootDir();// 返回引擎根目录路径（最后包含斜杠`/`） hutb/Build/engine/ 
+
+FPaths::ProjectDir();    // 工程根目录：D:/hutb/Unreal/CarlaUE4/
+
+
+参考[链接](https://community.cesium.com/t/loading-a-packaged-tileset-from-url/42367) 。
+
 
 #### 源代码分析
 
-加载的逻辑位于 `hutb\Unreal\CarlaUE4\Plugins\Marketplace\CesiumForUnreal\Source\CesiumRuntime\Private\Cesium3DTileset.cpp` 中的：
+加载的逻辑位于 `hutb\Unreal\CarlaUE4\Plugins\CesiumForUnreal\Source\CesiumRuntime\Private\Cesium3DTileset.cpp` 中的：
 ```shell
+UE_LOG(LogCesium, Log, TEXT("Loading tileset from URL %s"), *this->Url);
 this->_pTileset = MakeUnique<Cesium3DTilesSelection::Tileset>(
     externals,
     TCHAR_TO_UTF8(*this->Url),
     options);
 ```
+
+记录的日志位于：`hutb\Unreal\CarlaUE4\Saved\Logs\`，
+```text
+[2026.03.01-04.29.06:991][869]LogCesium: Loading tileset from URL File:///D:/model1/model1//tileset.json
+```
+
 MakeShared（包括用于TUniquePtr的 [MakeUnique](https://zhuanlan.zhihu.com/p/433605801) ）：类似于C++中的 std::make_shared ，比直接用普通指针创建效率更高，因为智能指针内存包含两部分，除了数据本身的内存之外，还有一个控制块内存，普通指针创建时，会分别申请两次内存，而使用 MakedShared 只需要进行一次内存申请，因而效率更高。
 
 MakeUnique 使用给定的参数分配一个类型 T 的新对象并将其作为 TUniquePtr 返回。

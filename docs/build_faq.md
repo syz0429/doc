@@ -241,17 +241,26 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ###### 打包报错：ERROR: System.ArgumentException: Staged filesystem reference may not start with a path separator or contain an empty path fragment (CarlaUE4/Content//Game/roadrunner/map/OpenDrive)
 
 解决：原始的 `DefaultGame.ini`为：
-```
+```txt
 +DirectoriesToAlwaysStageAsUFS=(Path="/Game/roadrunner/map/OpenDrive")
 ```
 前面不能以`/Game/`开头，直接以目录开头，和`+DirectoriesToAlwaysCook`不同。
 
-报错信息：
-```
-```
+##### 打包报错信息：DoesPackageExist FAILED: '/RoadRunnerMaterials/BaseMaterial' is not a standard unreal filename or a long path name. 
+
+```txt
 2026-02-28T00:46:51.4815772Z   LogPackageName: Error: DoesPackageExist: DoesPackageExist FAILED: '/RoadRunnerMaterials/BaseMaterial' is not a standard unreal filename or a long path name. Reason: ????????????????'/Engine/', '/Game/', '/Paper2D/', '/AnimationSharing/', '/GeometryMode/', '/Niagara/', '/ChaosSolverPlugin/', '/ChaosClothEditor/', '/SpeedTreeImporter/', '/ChaosNiagara/', '/GeometryCollectionPlugin/', '/GeometryProcessing/', '/DatasmithContent/', '/MotoSynth/', '/PythonScriptPlugin/', '/MediaCompositing/', '/PixelStreaming/', '/AudioSynesthesia/', '/HairStrands/', '/PostSplashScreen/', '/Synthesis/', '/MagicLeap/', '/MagicLeapPassableWorld/', '/SteamVR/', '/AirSim/', '/Carla/', '/CarlaTools/', '/StreetMap/', '/Config/', '/Script/', '/Extra/', '/Memory/', or '/Temp/'??
 ```
+前面还有异常：
+```txt
+2026-03-01T15:47:46.9162418Z   LogHttp: Warning: 00000231E1AB3900: request failed, libcurl error: 37 (Couldn't read a file:// file)
+2026-03-01T15:47:46.9163766Z   LogHttp: Warning: 00000231E1AB3900: libcurl info message cache 0 (Couldn't open file /D:/model1/model1//tileset.json)
+2026-03-01T15:47:46.9165181Z   LogHttp: Warning: 00000231E1AB3900: libcurl info message cache 1 (Closing connection -1)
+2026-03-01T15:47:46.9267071Z   LogCesium: Error: [2026-03-01 23:47:46.924] [error] [TilesetContentManager.cpp:713] An unexpected error occurs when loading tile: Request failed.
 ```
+原因：中电软件园场景的依赖瓦片`D:/model1/model1//tileset.json`不存在。
+
+原因：`hutb\Unreal\CarlaUE4\Plugins`中未安装RoadRunner插件。
 
 
 ###### 下载 osm2odr 报错：Unknown error (0x80092012) - 吊销功能无法检查证书是否吊销
