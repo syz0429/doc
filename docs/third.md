@@ -1,10 +1,17 @@
 ## 第三方链接
 
+[__UnrealZoo__](http://unrealzoo.site/) - 基于虚幻引擎4、5构建的丰富逼真的 3D 虚拟世界集合，旨在展现开放世界的复杂性和多样性。它包含各种可供具身人工智能操控的实体，例如人类角色、机器人、车辆和动物。[源代码](https://github.com/UnrealZoo/unrealzoo-gym) 、[可执行场景](https://modelscope.cn/datasets/UnrealZoo/UnrealZoo-UE4/files) 、[文档](https://unrealzoo.notion.site/) ，没有可编辑的资产、有商用
+
+[__SimWorld__](./software/simworld.md) - 基于虚幻引擎 5 、能与大型语言模型 (LLM) 和视觉语言模型 (VLM) 无缝集成，使智能体能够在复杂、动态的世界中感知、推理和行动。[源代码](https://github.com/SimWorld-AI/SimWorld) 、 [文档](https://simworld.readthedocs.io/) 
+
+[__UnrealCV 插件__](http://unrealcv.org/) - 连接计算机视觉和引擎、[文档](https://docs.unrealcv.org/en/master/plugin/install.html)
+
+[__Gym-UnrealCV__](https://github.com/zfw1226/gym-unrealcv) - 引擎的强化学习环境
+
 [__Carla 中文站__](https://bbs.carla.org.cn/) — 中文交流社区
 
-[__UnrealZoo__](http://unrealzoo.site/) - 基于虚幻引擎4、5构建的丰富逼真的 3D 虚拟世界集合，旨在展现开放世界的复杂性和多样性。它包含各种可供具身人工智能操控的实体，例如人类角色、机器人、车辆和动物。[源代码](https://github.com/UnrealZoo/unrealzoo-gym) 、[资产](https://modelscope.cn/datasets/UnrealZoo/UnrealZoo-UE4/files) 。
 
-[__SimWorld__](https://simworld.readthedocs.io/en/latest/getting_started/introduction.html) - 基于虚幻引擎 5 、能与大型语言模型 (LLM) 和视觉语言模型 (VLM) 无缝集成，使智能体能够在复杂、动态的世界中感知、推理和行动
+
 
 [__元毂智行__](https://www.meta-hub.ai/t/topic/76) — 基本API使用
 

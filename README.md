@@ -208,3 +208,22 @@ $$
   > # 确认参数是否正确设置
   > git config http.postBuffer
   > ```
+
+* 安装完 hutb-doc 后，运行`mkdocs serve --livereload`报错：ModuleNotFoundError: No module named 'pymdownx'
+> 解决：
+  > ```shell
+  > pip install pymdown-extensions
+  > ```
+
+## 许可证
+
+```
+@article{61e781b75244ab9dcbfb1893,
+	author={Haidong Wang and Zhiyong Li and Yaping Li and Ke Nai and Ming Wen},
+	title={STURE: Spatial-Temporal Mutual Representation Learning for Robust Data Association in Online Multi-Object Tracking},
+	volume=220,
+	year=2022,
+}
+```
+
+此项目依据 MIT 许可证发布。详情请查阅[许可证文件](./LICENSE)。
