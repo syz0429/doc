@@ -237,6 +237,28 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+###### 编译LibCarla报错
+```
+C:\workspace\hutb\Build\libcarla-visualstudio>cmake -G "Visual Studio 16 2019" -A x64  -DCMAKE_BUILD_TYPE=Server  -DCMAKE_CXX_FLAGS_RELEASE="/MD /MP"  -DCMAKE_INSTALL_PREFIX="C:/workspace/hutb/Unreal/CarlaUE4/Plugins/Carla/CarlaDependencies/"  "C:/workspace/hutb/"
+-- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.19045.
+CMake Error at CMakeLists.txt:4 (include):
+  include could not find requested file:
+
+    Build/CMakeLists.txt.in
+
+
+-- Build debug:   ON
+-- Build release: ON
+-- Build test:    OFF
+CMake Error at LibCarla/cmake/server/CMakeLists.txt:11 (install):
+  install FILES given directory "/$Recycle.Bin" to install.
+
+
+-- Configuring incomplete, errors occurred!
+```
+
+分析：安装目录/$Recycle.Bin不存在，表明-DCMAKE_INSTALL_PREFIX="C:/workspace/hutb/Unreal/CarlaUE4/Plugins/Carla/CarlaDependencies/"指向的安装目录不存在，因为前面有模块没有安装成功（一般是boost）。
+
 ###### 编译调试模式 LibCarla
 ```log
   D:\hutb\Unreal\CarlaUE4\Plugins\Carla\Source\Carla/Vehicle/MovementComponents/ChronoMovementComponent.h(21): fatal error C1083: �޷��򿪰����ļ�: ��chrono/physics/ChSystemNSC.h��: No such file or directory
