@@ -1,4 +1,4 @@
-# <p align=center> 人车孪创  </p>
+# <p align=center> 开源孪创  </p>
 
 <!-- Badges (flat): https://github.com/pudding0503/github-badge-collection -->
 <p align=center>
@@ -218,9 +218,21 @@ $$
 ## 许可证
 
 ```
-@article{61e781b75244ab9dcbfb1893,
+@inproceedings{airsim2017fsr,
+  author = {Shital Shah and Debadeepta Dey and Chris Lovett and Ashish Kapoor},
+  title = {AirSim: High-Fidelity Visual and Physical Simulation for Autonomous Vehicles},
+  year = {2017},
+  booktitle = {Field and Service Robotics},
+  eprint = {arXiv:1705.05065},
+  url = {https://arxiv.org/abs/1705.05065}
+}
+```
+
+```
+@article{sture,
 	author={Haidong Wang and Zhiyong Li and Yaping Li and Ke Nai and Ming Wen},
 	title={STURE: Spatial-Temporal Mutual Representation Learning for Robust Data Association in Online Multi-Object Tracking},
+    journal={Computer Vision and Image Understanding},
 	volume=220,
 	year=2022,
 }
