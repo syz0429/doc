@@ -157,8 +157,6 @@
 
 [遮挡感知](https://github.com/elandrum/Occlusion-Aware-Perception) - 测试和评估自动驾驶车辆在复杂遮挡场景下的感知和控制能力
 
-[异常检测](https://github.com/MoritzNekolla/AE_Anomaly_Detection)
-
 [使用 YOLO 和 CARLA 模拟器通过 IPM 和立体视觉进行距离估计](https://github.com/guilherme1guy/carla_darknet_integration)
 
 [Carla_IMU_分类器](https://github.com/dasmehdix/Carla_IMU_Classifier)
