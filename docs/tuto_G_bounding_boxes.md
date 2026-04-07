@@ -137,12 +137,12 @@ edges = [[0,1], [1,3], [3,2], [2,0], [0,4], [4,5], [5,1], [5,7], [7,6], [6,4], [
 现在我们已经设置了几何投影和模拟，我们可以继续创建游戏循环并将边界框渲染到场景中。
 
 ```py
-# Set up the set of bounding boxes from the level
-# We filter for traffic lights and traffic signs
+# 根据关卡设置边界框集
+# 筛选交通信号灯和交通标志
 bounding_box_set = world.get_level_bbs(carla.CityObjectLabel.TrafficLight)
 bounding_box_set.extend(world.get_level_bbs(carla.CityObjectLabel.TrafficSigns))
 
-# Remember the edge pairs
+# 记住边对
 edges = [[0,1], [1,3], [3,2], [2,0], [0,4], [4,5], [5,1], [5,7], [7,6], [6,4], [6,2], [7,3]]
 ```
 
@@ -425,7 +425,7 @@ while True:
 在 PASCAL VOC 格式中，XML 文件包含涉及随附图像文件、图像尺寸的信息，如果需要，还可以包括车辆类型等详细信息。
 
 ```xml
-<!-- Example PASCAL VOC format file-->
+<!-- PASCAL VOC 格式文件示例-->
 <annotation>
     <folder>output</folder>
     <filename>023235.png</filename>
@@ -528,4 +528,4 @@ with open('simulation_data.json', 'w') as json_file:
 
 
 
-*应该注意的是，在本教程中我们没有考虑重叠的边界框。为了在重叠的情况下识别前景边界框，需要进行额外的工作。*  
+*应该注意的是，在本教程中没有考虑重叠的边界框。为了在重叠的情况下识别前景边界框，需要进行额外的工作。*  

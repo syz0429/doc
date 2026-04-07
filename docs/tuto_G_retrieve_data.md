@@ -96,28 +96,24 @@ python3 config.py --map Town01
 <summary> <b>config.py</b> 中的可选参数  </summary>
 
 ```sh
-  -h, --help            show this help message and exit
-  --host H              IP of the host Carla Simulator (default: localhost)
-  -p P, --port P        TCP port of Carla Simulator (default: 2000)
-  -d, --default         set default settings
-  -m MAP, --map MAP     load a new map, use --list to see available maps
-  -r, --reload-map      reload current map
-  --delta-seconds S     set fixed delta seconds, zero for variable frame rate
-  --fps N               set fixed FPS, zero for variable FPS (similar to
-                        --delta-seconds)
-  --rendering           enable rendering
-  --no-rendering        disable rendering
-  --no-sync             disable synchronous mode
-  --weather WEATHER     set weather preset, use --list to see available
-                        presets
-  -i, --inspect         inspect simulation
-  -l, --list            list available options
+  -h, --help            显示此帮助信息并退出
+  --host H              Carla 主机模拟器的 IP 地址（默认：localhost）
+  -p P, --port P        Carla模拟器的 TCP 端口（默认值：2000）
+  -d, --default         设置为默认配置
+  -m MAP, --map MAP     加载新地图，使用 --list 查看可用地图
+  -r, --reload-map      重新加载当前地图
+  --delta-seconds S     设置固定的增量秒数，零值表示可变帧率
+  --fps N               设置固定帧率，零表示可变帧率（类似于 --delta-seconds）
+  --rendering           启用渲染
+  --no-rendering        禁用渲染
+  --no-sync             禁用同步模式
+  --weather WEATHER     设置天气预设，使用 --list 查看可用预设。
+  -i, --inspect         检查模拟
+  -l, --list            列出可用选项
   -b FILTER, --list-blueprints FILTER
-                        list available blueprints matching FILTER (use '*' to
-                        list them all)
+                        列出符合筛选条件的可用蓝图（使用“*”列出所有蓝图）
   -x XODR_FILE_PATH, --xodr-path XODR_FILE_PATH
-                        load a new map with a minimum physical road
-                        representation of the provided OpenDRIVE
+                        使用提供的 OpenDRIVE 加载包含最小物理道路表示的新地图
 ```
 </details>
 <br>
@@ -156,21 +152,21 @@ python3 environment.py --clouds 100 --rain 80 --wetness 100 --puddles 60 --wind 
 <summary> <b>environment.py</b> 中的可选参数 </summary>
 
 ```sh
-  -h, --help            show this help message and exit
-  --host H              IP of the host server (default: 127.0.0.1)
-  -p P, --port P        TCP port to listen to (default: 2000)
-  --sun SUN             Sun position presets [sunset | day | night]
-  --weather WEATHER     Weather condition presets [clear | overcast | rain]
-  --altitude A, -alt A  Sun altitude [-90.0, 90.0]
-  --azimuth A, -azm A   Sun azimuth [0.0, 360.0]
-  --clouds C, -c C      Clouds amount [0.0, 100.0]
-  --rain R, -r R        Rain amount [0.0, 100.0]
-  --puddles Pd, -pd Pd  Puddles amount [0.0, 100.0]
-  --wind W, -w W        Wind intensity [0.0, 100.0]
-  --fog F, -f F         Fog intensity [0.0, 100.0]
-  --fogdist Fd, -fd Fd  Fog Distance [0.0, inf)
+  -h, --help            显示此帮助信息并退出
+  --host H              主机服务器的IP地址（默认值：127.0.0.1）
+  -p P, --port P        要监听的 TCP 端口（默认值：2000）
+  --sun SUN             太阳位置预设 [sunset | day | night] （[日落 | 白天 | 夜晚]）
+  --weather WEATHER     天气状况预设 [clear | overcast | rain]（[晴朗 | 阴天 | 下雨]）
+  --altitude A, -alt A  太阳高度角 [-90.0, 90.0]
+  --azimuth A, -azm A   太阳方位角 [0.0, 360.0]
+  --clouds C, -c C      云量 [0.0, 100.0]
+  --rain R, -r R        降雨量 [0.0, 100.0]
+  --puddles Pd, -pd Pd  水坑数量 [0.0, 100.0]
+  --wind W, -w W        风力强度 [0.0, 100.0]
+  --fog F, -f F         雾的强度 [0.0, 100.0]
+  --fogdist Fd, -fd Fd  雾距离 [0.0, inf)
   --wetness Wet, -wet Wet
-                        Wetness intensity [0.0, 100.0]
+                        湿度强度 [0.0, 100.0]
 ```
 </details>
 <br>
@@ -200,18 +196,18 @@ python3 spawn_npc.py -n 50 -w 50 --safe
 <summary> <b>spawn_npc.py</b> 中的可选参数 </summary>
 
 ```sh
-  -h, --help            show this help message and exit
-  --host H              IP of the host server (default: 127.0.0.1)
-  -p P, --port P        TCP port to listen to (default: 2000)
+  -h, --help            显示此帮助信息并退出
+  --host H              主机服务器的IP地址（默认值：127.0.0.1）
+  -p P, --port P        要监听的 TCP 端口（默认值：2000）
   -n N, --number-of-vehicles N
-                        number of vehicles (default: 10)
+                        车辆数量（默认值：10）
   -w W, --number-of-walkers W
-                        number of walkers (default: 50)
-  --safe                avoid spawning vehicles prone to accidents
-  --filterv PATTERN     vehicles filter (default: "vehicle.*")
-  --filterw PATTERN     pedestrians filter (default: "walker.pedestrian.*")
-  -tm_p P, --tm-port P  port to communicate with TM (default: 8000)
-  --async               Asynchronous mode execution
+                        行人数（默认值：50）
+  --safe                避免生成容易发生事故的车辆
+  --filterv PATTERN     车辆过滤器（默认值：“vehicle.*”）
+  --filterw PATTERN     行人过滤器（默认值：“walker.pedestrian.*”）
+  -tm_p P, --tm-port P  与交通管理器通信的端口（默认值：8000）
+  --async               异步模式执行
 ```
 </details>
 <br>
@@ -563,7 +559,7 @@ meshlab
 __3.__ 打开其中一个 _.ply_ 文件。 `File > Import mesh...` 
 
 ![tuto_lidar](img/tuto_lidar.jpg)
-<div class="div" style="text-align: center"><i>经过Meshlab处理后的激光雷达输出。</i></div>
+<div class="div" style="text-align: center"><i>经过Meshlab处理后的激光雷达输出</i></div>
 
 ### 雷达传感器 <span id="雷达传感器"></span>
 
@@ -629,7 +625,7 @@ rad_ego.listen(lambda radar_data: rad_callback(radar_data))
 ```
 
 ![tuto_radar](img/tuto_radar.jpg)
-<div class="div" style="text-align: center"><i>雷达输出。车辆停在交通信号灯处，因此其前面的静态元素显示为白色。</i></div>
+<div class="div" style="text-align: center"><i>雷达输出。车辆停在交通信号灯处，因此其前面的静态元素显示为白色</i></div>
 
 ---
 ## 非渲染模式 <span id="no-rendering-mode"></span>
@@ -668,17 +664,17 @@ python3 no_rendering_mode.py --no-rendering
 <summary> <b>no_rendering_mode.py</b> 中的可选参数 </summary>
 
 ```sh
-  -h, --help           show this help message and exit
-  -v, --verbose        print debug information
-  --host H             IP of the host server (default: 127.0.0.1)
-  -p P, --port P       TCP port to listen to (default: 2000)
-  --res WIDTHxHEIGHT   window resolution (default: 1280x720)
-  --filter PATTERN     actor filter (default: "vehicle.*")
-  --map TOWN           start a new episode at the given TOWN
-  --no-rendering       switch off server rendering
-  --show-triggers      show trigger boxes of traffic signs
-  --show-connections   show waypoint connections
-  --show-spawn-points  show recommended spawn points
+  -h, --help           显示此帮助信息并退出
+  -v, --verbose        打印调试信息
+  --host H             主机服务器的IP地址（默认值：127.0.0.1）
+  -p P, --port P       要监听的 TCP 端口（默认值：2000）
+  --res WIDTHxHEIGHT   窗口分辨率（默认值：1280x720）
+  --filter PATTERN     动作者过滤器（默认值："vehicle.*"）
+  --map TOWN           在指定的城镇开始新的轮次
+  --no-rendering       关闭服务器渲染
+  --show-triggers      显示交通标志的触发框
+  --show-connections   显示航点连接
+  --show-spawn-points  显示推荐的生成点
 ```
 </details>
 <br>
@@ -786,7 +782,7 @@ print(client.show_recorder_collisions("~/tutorial/recorder/recording01.log",'v',
 <div class="div" style="text-align: center"><i>查询显示参与者被阻止。在此模拟中，自主车辆保持阻塞状态 100 秒。</i></div>
 
 ![tuto_query_collisions](img/tuto_query_collisions.jpg)
-<div class="div" style="text-align: center"><i>显示自主车辆与“其他”类型的对象之间的碰撞的查询。</i></div>
+<div class="div" style="text-align: center"><i>显示自主车辆与“其他”类型对象之间的碰撞的查询</i></div>
 
 !!! 笔记
     获取每一帧的详细文件信息可能会让人不知所措。在其他查询之后使用它来了解要查看的位置。 
@@ -896,14 +892,14 @@ def main():
         ego_imu = None
 
         # --------------
-        # Start recording
+        # 开始记录
         # --------------
         """
         client.start_recorder('~/tutorial/recorder/recording01.log')
         """
 
         # --------------
-        # Spawn ego vehicle
+        # 生成自主载具
         # --------------
         """
         ego_bp = world.get_blueprint_library().find('vehicle.tesla.model3')
@@ -926,7 +922,7 @@ def main():
         """
 
         # --------------
-        # Add a RGB camera sensor to ego vehicle. 
+        # 给自主载具添加 RGB 相机传感器
         # --------------
         """
         cam_bp = None
@@ -942,7 +938,7 @@ def main():
         """
 
         # --------------
-        # Add collision sensor to ego vehicle. 
+        # 给自主载具添加碰撞传感器
         # --------------
         """
         col_bp = world.get_blueprint_library().find('sensor.other.collision')
@@ -956,7 +952,7 @@ def main():
         """
 
         # --------------
-        # Add Lane invasion sensor to ego vehicle. 
+        # 给自主载具添加压线传感器
         # --------------
         """
         lane_bp = world.get_blueprint_library().find('sensor.other.lane_invasion')
@@ -970,7 +966,7 @@ def main():
         """
         
         # --------------
-        # Add Obstacle sensor to ego vehicle. 
+        # 给自主载具添加障碍物传感器
         # --------------
         """
         obs_bp = world.get_blueprint_library().find('sensor.other.obstacle')
@@ -985,7 +981,7 @@ def main():
         """
 
         # --------------
-        # 给自主车辆添加全球导航卫星系统传感器
+        # 给自主载具添加全球导航卫星系统传感器
         # --------------
         """
         gnss_bp = world.get_blueprint_library().find('sensor.other.gnss')
@@ -1000,7 +996,7 @@ def main():
         """
 
         # --------------
-        # Add IMU sensor to ego vehicle. 
+        # 给自主载具添加 IMU 传感器
         # --------------
         """
         imu_bp = world.get_blueprint_library().find('sensor.other.imu')
@@ -1015,7 +1011,7 @@ def main():
         """
 
         # --------------
-        # Place spectator on ego spawning
+        # 在自主载具生成的位置放置观察者
         # --------------
         """
         spectator = world.get_spectator()
@@ -1031,14 +1027,14 @@ def main():
         """
 
         # --------------
-        # Game loop. Prevents the script from finishing.
+        # 游戏循环。阻止脚本完成。
         # --------------
         while True:
             world_snapshot = world.wait_for_tick()
 
     finally:
         # --------------
-        # Stop recording and destroy actors
+        # 停止记录并销毁动作者
         # --------------
         client.stop_recorder()
         if ego_vehicle is not None:
@@ -1104,7 +1100,7 @@ def main():
         lidar_sen = None
 
         # --------------
-        # Query the recording
+        # 查询记录
         # --------------
         """
         # Show the most important events in the recording.  
@@ -1116,21 +1112,21 @@ def main():
         """
 
         # --------------
-        # Reenact a fragment of the recording
+        # 重现记录中的一段片段
         # --------------
         """
         client.replay_file("~/tutorial/recorder/recording03.log",0,30,0)
         """
 
         # --------------
-        # Set playback simulation conditions
+        # 设置播放模拟条件
         # --------------
         """
         ego_vehicle = world.get_actor(322) #Store the ID from the simulation or query the recording to find out
         """
 
         # --------------
-        # Place spectator on ego spawning
+        # 让自主载具生成点放置观察者
         # --------------
         """
         spectator = world.get_spectator()
@@ -1139,7 +1135,7 @@ def main():
         """
 
         # --------------
-        # Change weather conditions
+        # 改变天气状况
         # --------------
         """
         weather = world.get_weather()
@@ -1150,7 +1146,7 @@ def main():
         """
 
         # --------------
-        # Add a RGB camera to ego vehicle.
+        # 给自主载具添加 RGB 相机
         # --------------
         """
         cam_bp = None
@@ -1166,7 +1162,7 @@ def main():
         """
 
         # --------------
-        # Add a Logarithmic Depth camera to ego vehicle. 
+        # 给自主载具添加对数深度相机
         # --------------
         """
         depth_cam = None
@@ -1182,7 +1178,7 @@ def main():
         depth_cam.listen(lambda image: image.save_to_disk('~/tutorial/de_log/%.6d.jpg' % image.frame,carla.ColorConverter.LogarithmicDepth))
         """
         # --------------
-        # Add a Depth camera to ego vehicle. 
+        # 给自主载具添加深度相机
         # --------------
         """
         depth_cam02 = None
@@ -1199,7 +1195,7 @@ def main():
         """
 
         # --------------
-        # Add a new semantic segmentation camera to ego vehicle
+        # 给自主载具添加语义分割相机
         # --------------
         """
         sem_cam = None
@@ -1216,7 +1212,7 @@ def main():
         """
         
         # --------------
-        # Add a new radar sensor to ego vehicle
+        # 给自主载具添加新的雷达传感器
         # --------------
         """
         rad_cam = None
@@ -1261,7 +1257,7 @@ def main():
         """
 
         # --------------
-        # Add a new LIDAR sensor to ego vehicle
+        # 给自主载具添加激光雷达传感器
         # --------------
         """
         lidar_cam = None
@@ -1278,14 +1274,14 @@ def main():
         """
 
         # --------------
-        # Game loop. Prevents the script from finishing.
+        # 游戏循环。阻止脚本完成。
         # --------------
         while True:
             world_snapshot = world.wait_for_tick()
 
     finally:
         # --------------
-        # Destroy actors
+        # 销毁动作者
         # --------------
         if ego_vehicle is not None:
             if ego_cam is not None:
