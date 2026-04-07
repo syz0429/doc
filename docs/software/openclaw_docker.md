@@ -46,7 +46,9 @@
 
 ### 1. 开启 Windows 虚拟化与 WSL2 (核心避坑)
 在 Windows 11 上运行 Docker 强依赖 WSL2：
+
 1. 确保在电脑 BIOS 中已开启**CPU虚拟化**（任务管理器 -> 性能 -> CPU 中可查看“虚拟化：已启用”）。
+
 2. 打开 PowerShell（以管理员身份运行），执行以下命令安装 WSL，**安装完成后请重启电脑**：
 ```powershell
 wsl --install
@@ -60,14 +62,21 @@ git --version
 
 ### 3. 安装 Docker Desktop
 前往 [Docker Desktop](https://www.docker.com) 下载安装。
-> **注意**：安装时建议勾选“Use WSL 2 based engine”。安装完成后，确保 Docker Desktop 处于已启动状态。
+
+!!! 注意
+    安装时建议勾选“Use WSL 2 based engine”。安装完成后，确保 Docker Desktop 处于已启动状态。
 
 ### 4. 获取 SiliconFlow API Key
 前往 [SiliconFlow 控制台](https://cloud.siliconflow.cn/account/ak) 免费注册。
+
 ⚠️ **核心优化**：为了实现多路并发隔离、解决 Token 争抢与限流瓶颈，建议创建**多个独立的 Key**，分别用于：
+
 - 通用文本与工具调度 (Text & Tool)
+
 - 视觉与代码专家 (Vision & Code)
+
 - 深度推理专家 (Reason)
+
 - 向量嵌入记忆 (Embed)
 
 ---
