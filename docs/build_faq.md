@@ -237,6 +237,18 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+###### 'b2' is not recognized as the name of a cmdlet
+```
+b2 : The term 'b2' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spe
+lling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:226
++ ... conda3\ ; conda activate hutb; python --version; pip list; b2 -j36 he ...
++                                                                ~~
+    + CategoryInfo          : ObjectNotFound: (b2:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+解决：设置b2.exe的绝对路径
+
 ###### 编译LibCarla报错
 ```
 C:\workspace\hutb\Build\libcarla-visualstudio>cmake -G "Visual Studio 16 2019" -A x64  -DCMAKE_BUILD_TYPE=Server  -DCMAKE_CXX_FLAGS_RELEASE="/MD /MP"  -DCMAKE_INSTALL_PREFIX="C:/workspace/hutb/Unreal/CarlaUE4/Plugins/Carla/CarlaDependencies/"  "C:/workspace/hutb/"

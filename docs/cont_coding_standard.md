@@ -32,6 +32,35 @@
   * LibCarla 使用 [谷歌风格指南][googlelink] 的变体。
   * 如果代码在服务器端使用，则应将 `try-catch` 块的使用 `#ifndef LIBCARLA_NO_EXCEPTIONS` 括起来 。
 
+### AirSim 编码风格检查
+
+* [安装和配置 clang-format 和 VSCode插件](https://zhuanlan.zhihu.com/p/720080149)
+
+检查是否安装成功：
+```shell
+clang-format --version
+```
+
+* 安装 VSCode 插件 clang-foramt
+
+* 配置 clang-format
+
+  Clang-format: Assume Filename（规则，引用项目目录下的文件）
+  ```text
+  ./.clang-format
+  ```
+  Clang-format: Executable （可执行文件 clang-format.exe 的绝对路径）
+  ```text
+  D:\software\llvm\bin\clang-format.exe
+  ```
+  Clang-format: Style（使用项目根目录下的.clang-format文件）
+  ```text
+  file:D:\hutb\Build\AirSim\.clang-format
+  ```
+
+* 打开.cpp文件后，按`Alt+Shift+F`即可格式化当前文件
+
+
 
 
 [ue4link]: https://dev.epicgames.com/documentation/zh-cn/unreal-engine/coding-standard?application_version=4.27

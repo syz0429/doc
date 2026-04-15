@@ -90,7 +90,8 @@ Examples\CppClient\out\build\x64-Debug\Detour-d.lib(DetourNavMesh.obj) : error L
 PCH (PreCompiled Headers) 是一种宏管理方法，
 
 
-Carla.Build.cs 中说明了：在Windows环境下，虚幻引擎（Unreal）即使在调试模式下也使用 Release C++ 运行时（CRT），因此除非我们重新编译引擎，否则无法链接调试库。
+[Carla.Build.cs](https://github.com/OpenHUTB/hutb/blob/9bd0e8e6d790bfe6ecc3fefbc9033fab2275accb/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Carla.Build.cs#L149) 中说明了：在Windows环境下，虚幻引擎（Unreal）即使在调试模式下也使用 Release C++ 运行时（CRT），因此除非我们重新编译引擎，否则无法链接调试库。
+
 
 这是因为调试虚幻引擎项目时，Debug C++运行时库的作用不大，而且与 Debug CRT 库链接会迫使我们的第三方库依赖项也使用 Debug CRT 进行编译（通常性能会更低）。为了调试程序代码，需要单独复制第三方静态库的调试版本，这通常很不方便。
 
