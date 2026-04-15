@@ -977,6 +977,8 @@
 
 [自动驾驶模拟及相关任务的综合框架](https://github.com/femw03/DAI_project) - 集成了车辆控制、计算机视觉、强化学习环境和通过 CARLA 进行模拟的模块。
 
+[Apollo和Carla协同仿真](https://github.com/guardstrikelab/)
+
 [在各种环境中尝试训练和迁移深度强化模型](https://github.com/Guthax/Sim2Sim2Real)
 
 [LIBRA：车辆抬头显示器智能设计与验证的一站式平台](https://github.com/ZhilingResearch/Libra)
