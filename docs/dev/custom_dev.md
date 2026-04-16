@@ -28,6 +28,7 @@ git checkout hutb
 git cherry-pick {commit_id}
 ```
 
+
 ## 冲突解决
 [open3d_lidar.py](../../../carla/PythonAPI/examples/open3d_lidar.py)
 强制打补丁
@@ -41,6 +42,10 @@ git apply --reject xxx.patch
 ```shell
 git config core.sparsecheckout true
 ```
+
+## Beyond Compare对比相同文件仍显示红色
+
+解决：[Beyond Compare对比相同文件仍显示红色怎么办](https://www.beyondcompare.cc/wenti/xianshi-hongse.html)
 
 
 
