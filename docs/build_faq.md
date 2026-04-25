@@ -237,6 +237,17 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+###### 打包报错：Missing packaged runtime DLLs
+```
+[Package]: [ERROR] Missing packaged runtime DLLs: AgentInterface.dll dxil.dll embree.2.14.0.dll hdf5.dll libfbxsdk.dll tbb.dll tbbmalloc.dll
+[Package]: [ERROR] Required Windows runtime files were not staged.
+```
+位于：hutb\Build\engine\Engine\Binaries\Win64\AgentInterface.dll (dxil.dll, embree.2.14.0.dll, libfbxsdk.dll, tbb.dll, tbbmalloc.dll)
+
+hutb\Build\engine\Engine\Plugins\Experimental\AlembicImporter\Binaries\Win64\hdf5.dll
+
+解决：[commit](https://github.com/louiszengCN/CarlaAir/commit/2119ed21f65449a9c7857693f1a3cc21dd06e80d) 
+
 ###### 'b2' is not recognized as the name of a cmdlet
 ```
 b2 : The term 'b2' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spe
