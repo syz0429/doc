@@ -79,13 +79,13 @@ CARLA 场景构建与自动采集
 
 ```mermaid
 flowchart LR
-    A["CARLA 仿真环境"] --> B["main.py<br/>场景构建与自动采集"]
+    A["CARLA 仿真环境"] --> B["main.py 场景构建与自动采集"]
     B --> C["PNG 图像 + XML 标注"]
-    C --> D["xml_to_yolo_dataset.py<br/>数据清洗与格式转换"]
+    C --> D["xml_to_yolo_dataset.py 数据清洗与格式转换"]
     D --> E["YOLO 数据集<br/>images / labels / dataset.yaml"]
     E --> F["YOLO 模型训练与导出"]
     F --> G["ONNX 模型"]
-    G --> H["detector_onnx.py<br/>推理与可视化验证"]
+    G --> H["detector_onnx.py 推理与可视化验证"]
     H --> I["图片 / 视频检测结果"]
 ```
 
